@@ -1,24 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>My First Bitstarter</title>
-    <meta name="viewport" content="width=device-width, inicial-scale=1.0">
-    <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-combined.no-icons.min.css">
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css">
-    <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fsocial-buttons.css">    
-    <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fjquery.js"></script>
-    <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap.js"></script>
-    <link href="http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,300,400,600,700,800" 
-          rel="stylesheet" type="text/css">
+<head>
+	<meta charset="utf-8">
+	<title>TeamApp</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-combined.no-icons.min.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css">
+    <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fsocial-buttons.css">    
+    <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fjquery.js"></script>
+    <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap.js"></script>
+    <link href="http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,300,400,600,700,800" 
+          rel="stylesheet" type="text/css">
+	<!-- Le styles -->
+	
+	  <style type="text/css">
+      body {
+        padding-bottom: 40px;
+      }
+
+      /* Custom container */
+      .container-narrow {
+        margin: 0 auto;
+        max-width: 1000px;
+      }
+      .container-narrow > hr {
+        margin: 30px 0;
+      }
+
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        margin: 60px 0;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 72px;
+        line-height: 1;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+
+      /* Supporting marketing content */
+  	  .container{
+  	  	max-width: 100%;
+  	  }
+
+    </style>
     <style type="text/css">
      
 	/*large Desktop*/
 	@media(min-width: 980px){
-		body{
-			padding-top:60px;
-		}
+
 		.linediv-l{
 			border-right: 1px white solid;
 		}
@@ -26,7 +62,15 @@
 			border-left: 1px white solid;
 		}
 	}
-
+	.carousel-indicators .active {
+    	background-color:#666666;
+	}
+	.carousel-indicators li {
+		background-color: rgba(102, 102, 102, 0.25);
+	}
+	.carousel{
+		height: 260px;
+	}
 	/*Landscape phone and down*/
 	@media(max-width: 480px){
 		.copy {
@@ -39,9 +83,6 @@
 			border-top: 1px white solid;
 		}
 	}
-	body {
-		font-family:'Open Sans', Helvetica, Arial, sans-serif;
-     	}
 	.heading, .subheading{
 		font-family:'Ubuntu', Helvetica, Arial, sans-serif;
 		text-align: center;
@@ -79,6 +120,10 @@
 		padding-bottom: 2.5%;
 		text-align: justify;
 	}
+	.jumbotron{
+		padding-left: 10%;
+		padding-right: 10%;
+	}
 	.asset{
 		padding: 2.5% 0%;
 	}
@@ -92,42 +137,119 @@
 	.footer a{
 		color: #ccccff;
 	}
+	    .marketing .span4 {
+      text-align: center;
+    }
+    .marketing h2 {
+      font-weight: normal;
+    }
+    .marketing .span4 p {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
      </style>
-   </head>
-   <body>
-	<div class="navbar navbar-inverse navbar-fixed-top">
-	<div class="navbar-inner">
-		<div class="container">
-			<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a class="brand" href="#">Bitstarter</a>
-			<div class="nav-collapse collapse">
-				<ul class="nav">
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="#about">About</a> </li>
-					<li><a href="#contact">Contact</a> </li>
-				</ul>
+
+	<link href="http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+	<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Le fav and touch icons -->
+	<link rel="shortcut icon" href="http://twitter.github.com/bootstrap/assets/images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="http://twitter.github.com/bootstrap/assets/images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="http://twitter.github.com/bootstrap/assets/images/apple-touch-icon-114x114.png">
+</head>
+<body>
+
+<div class="container-narrow">
+
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <h3 class="muted">TeamApp</h3>
+      </div>
+
+      <hr>
+			<div id="myCarousel" class="carousel slide" data-interval="false">
+				<ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="1"></li>
+					<li data-target="#myCarousel" data-slide-to="2"></li>
+					<li data-target="#myCarousel" data-slide-to="3"></li>
+
+				</ol>
+				<div class="carousel-inner">
+					<div class="item active">
+						<div class="jumbotron">
+					        <h2 style="color:#FF6A00">Do you think you are alone in sports?</h2>
+					        <p class="lead">Discover sport events close to you, join a team or create a new one. Invite your friends and share with them a healthy lifestyle.</p>
+					        
+					      </div>
+
+					</div>
+					<div class="item">
+							<div class="jumbotron">
+					        <h2 style="color:#25D500">Do you need a tennis partner?</h2>
+					        <p class="lead">Publish your need to close fellow tennis players and generate an invitation.
+					        </p>
+					      </div>
+						
+					</div>
+					<div class="item">
+						<div class="jumbotron">
+					        <h2 style="color:#0B62A4">At the last minute, one of your soccer team members says he's not coming?</h2>
+					        <p class="lead">Don't cancel the match! Ask for an enthusiastic player nearby to cover for the missing one!</p>
+					      </div>
+					
+					</div>
+					<div class="item">
+						<div class="jumbotron">
+					        <h2 style="color:#7409AA" >You need a team to play a match against?</h2>
+					        <p class="lead">Search for teams that are your level and challenge them!</p>
+					      </div>
+					</div>
+				</div>
+				<a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+				<a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
 			</div>
-		</div>
+      <hr>
+
+      <div class="row-fluid marketing">
+        <div class="span4">
+          <img width="40%" height="40%" src="http://i.imgur.com/dVoNgA7.png">
+          <h3>Make a team</h3>
+
+          <p>Invite nearby sport enthusiasts to practice a team sport with you!</p>
+        </div>
+
+        <div class="span4">                  
+          <img width="40%" height="40%" src="http://i.imgur.com/9HsV0dc.jpg">
+ <h3>Challenge others</h3>
+          <p>Spice up your normal practice challenging other teams with similar level of skill.</p>
+        </div>
+        <div class="span4">   
+	               
+          <img width="40%" height="40%" src="http://i.imgur.com/Gfxhhwq.jpg">
+ 		<h3>Find a partner</h3>
+          <p>Make new friends and discover sports your couldn't practice on your own.</p>
+        </div>
 	</div>
-	</div>
-	<div class="container">
-		<div class="row-fluid heading">
-			<div class="span12">
-				<h1>Product</h1>
-			</div>
-		</div>
-		<div class="row-fluid subheading">
-			<div class="span12">
-				<p class="lead">One sentence description.</p>
-			</div>
-		</div>
+<hr>
+
+</div> <!-- /container -->
+
+<div class="container">
 		<div class="row-fluid pitch">
 			<div class="span5 offset1 video">
-				<img class="img-polaroid" src="http://placehold.it/480x300">
+
+	 		<img class="img-polaroid" width="480" height="150" src="http://i.imgur.com/h9oFwIL.jpg">
 
 			</div>
 			<!-- We define a new Actions div to contain statistics, order, and share buttons-->
@@ -136,25 +258,25 @@
 					<div class="statistics">
 						<div class="span4">
 							<div class="linediv-l">
-								<h3>1000</h3> <p>backers</p>
+								<h3>0000</h3> <p>backers</p>
 							</div>
 						</div>
 						<div class="span4">
 							<div class="linediv-c">															
-								<h3>$6000</h3>	<p>of $10.000</p>							
+								<h3>$0000</h3>	<p>of $10.000</p>							
 							</div>
 						</div>
 						<div class="span4"> 
 							<div class="linediv-r">
-									<h3>10</h3> <p>days left</p>
+									<h3>30</h3> <p>days left</p>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="span10 offset1">
 					<div class="thermometer progress active">
-						<div class="bar bar-success" style="width:60%;"></div>
-						<div class="bar bar-warning" style="width:40%;"></div>
+						<div class="bar bar-success" style="width:0%;"></div>
+						<div class="bar bar-warning" style="width:100%;"></div>
 					</div>
 				</div>
 				<div class="span6 offset3 order">
@@ -162,39 +284,34 @@
 
 				</div>
 				<div class="span8 offset2 social">
-					<button class="btn btn-twitter"> <i class="icon-twitter">|Twitter</i></button>
-					<button class="btn btn-facebook"> <i class="icon-facebook">|Facebook</i></button>
+					<button class="btn btn-twitter"> <i class="icon-twitter"></i>|Twitter</button>
+					<button class="btn btn-facebook"> <i class="icon-facebook"></i>|Facebook</button>
 				</div>
 			</div>
 	 </div>
 	 <div class="row-fluid section1">
 	 	<div class="span5 offset1 asset">
-	 		<img class="img-polaroid" src="http://placehold.it/480x300">
+	 		<img class="img-polaroid" width="480" height="300" src="http://i.imgur.com/KTWx8pM.jpg">
 	 	</div>
 	 	<div class="span5 copy">
 	 		<p>
-	 		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	 		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	 		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-	 		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-	 		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-	 		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	 		Create a common space for different sport disciplines. Find people nearby who are interested in practicing
+	 		sports. Find out who needs a team member or a partner, get in touch and together create a team. Invite
+	 		more people to join your team and find other teams to compete against.
 	 		</p>
 	 	</div>
 	 </div>
 	<div class="row-fluid section2">
 	 	<div class="span5 offset1 copy copy-right">
 	 		<p>
-	 		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	 		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	 		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-	 		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-	 		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-	 		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	 	The funds will be used to build the website and mobile applications for Android and Apple devices. If the project is a success we will coming expanding the site with more functionalities and features.
+
+
+
 	 		</p>
 	 	</div>
 	 	<div class="span5 asset">
-	 		<img class="img-polaroid" src="http://placehold.it/480x300">
+	 		<img class="img-polaroid" width="480" height="300" src="http://i.imgur.com/asqXsW6.jpg">
 	 	</div> 	
 	</div>
 
@@ -206,13 +323,12 @@
 					<div class="accordion-heading">
 						<a class="accordion-toggle" data-toggle="collapse" 
 						data-parent="#accordion2" href="#collapseOne">
-						What does FAQ stand for?
+						Will it be available for mobile devices or just web?
 					</a>
 					</div>
 					<div id="collapseOne" class="accordion-body collapse">
 						<div class="accordion-inner">
-							Frequently Asked Question
-						</div>
+	It will have a web version and a mobile version so you can organize your sports sessions from home and from the court.						</div>
 					</div>
 				</div>
 
@@ -221,12 +337,12 @@
 					<div class="accordion-heading">
 						<a class="accordion-toggle" data-toggle="collapse" 
 						data-parent="#accordion2" href="#collapseTwo">
-						What's a Frequently Asked Question?
+						Do I need to pay to register?
 					</a>
 					</div>
 					<div id="collapseTwo" class="accordion-body collapse">
 						<div class="accordion-inner">
-							A question which is commonly asked by users.		
+							No, you can sign up for free and donate if you want to help.		
 						</div>
 					</div>
 				</div>
@@ -242,5 +358,7 @@
 		</div>
 	</div>
    </div>
-  </body>
+
+    <script src="../assets/js/holder/holder.js"></script>	
+</body>
 </html>
